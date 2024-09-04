@@ -1,0 +1,77 @@
+.wp-block-templafy-blocks-hero-with-paralax {
+  margin-inline: 0 !important;
+  max-width: 100% !important;
+  background-color: black;
+  padding-top: 10rem;
+  padding-bottom: 1000px;
+}
+
+h1,
+p {
+  color: white;
+  width: fit-content;
+}
+
+.wp-block-templafy-blocks-hero-with-paralax .wp-block-group {
+  display: flex;
+  flex-direction: column;
+  left: 35%;
+  position: fixed;
+  align-items: center;
+}
+
+.img-left {
+  position: fixed;
+  top: 45%;
+  left: 5%;
+  z-index: 2;
+}
+
+.img-right {
+  position: fixed;
+  top: 35%;
+  right: 30%;
+  z-index: 2;
+}
+
+.second-div {
+  height: 1000px;
+}
+
+.shape-1,
+.shape-2,
+.shape-3,
+.shape-4 {
+  position: fixed;
+}
+
+.shape-1 {
+  top: 45%;
+  left: 0;
+  height: auto;
+  width: 300px;
+  z-index: 1;
+}
+
+.shape-2 {
+  top: 60%;
+  left: 0%;
+  height: auto;
+  width: 200px;
+}
+
+.shape-3 {
+  top: 20%;
+  right: 20%;
+  height: 200px;
+  width: auto;
+  z-index: 1;
+}
+
+.shape-4 {
+  top: 85%;
+  right: 0%;
+  height: 300px;
+  width: auto;
+  z-index: 1;
+}
