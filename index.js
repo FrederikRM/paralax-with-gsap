@@ -1,28 +1,30 @@
-console.log('Hello World!');
-
-const imgLeft = document.querySelector('.img-left');
-const imgRight = document.querySelector('.img-right');
-
-console.log(imgLeft, imgRight);
-
-imgLeft.classList.add('img-left-float');
-imgRight.classList.add('img-right-float');
-
-window.addEventListener('scroll', () => {
-  if (window.scrollY !== 0) {
-    console.log('You are not at the top');
-    imgLeft.classList.remove('img-left-float');
-    imgRight.classList.remove('img-right-float');
-  } else {
-    console.log('You are at the top');
-    imgLeft.classList.add('img-left-float');
-    imgRight.classList.add('img-right-float');
-  }
-});
-
 // Register the ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
+// Create floating animations for img-left and img-right
+const floatLeft = gsap.timeline({ paused: true, repeat: -1, yoyo: true });
+floatLeft.to('.img-left', { y: '-3%', duration: 2, ease: 'power1.inOut' });
+
+const floatRight = gsap.timeline({ paused: true, repeat: -1, yoyo: true });
+floatRight.to('.img-right', { y: '-5%', duration: 3, ease: 'power2.inOut' });
+
+floatLeft.play();
+floatRight.play();
+
+// Add scroll event listener to control floating animations
+window.addEventListener('scroll', () => {
+  if (window.scrollY === 0) {
+    console.log('You are at the top');
+    floatLeft.play();
+    floatRight.play();
+  } else {
+    console.log('You are not at the top');
+    floatLeft.pause();
+    floatRight.pause();
+  }
+});
+
+// GSAP animations for img-left and img-right
 gsap.to('.img-left', {
   x: '-100%',
   ease: 'none',
